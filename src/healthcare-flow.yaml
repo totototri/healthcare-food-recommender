@@ -1,0 +1,28 @@
+version: 0.5
+nodes:
+  # 医療データ処理ノード
+  data_processor:
+    agent: openAIAgent
+    params:
+      model: gpt-4o
+    inputs:
+      prompt: "医療データを匿名化して分析"
+      data: ${user_input}
+  
+  # 食事推薦ノード
+  diet_recommender:
+    agent: openAIAgent
+    params:
+      model: gpt-4o
+    inputs:
+      prompt: "健康条件に基づいた食事提案"
+      health_data: ${data_processor.output}
+  
+  # 出力フォーマッタ
+  formatter:
+    agent: openAIAgent
+    params:
+      model: gpt-4o
+    inputs:
+      prompt: "結果をユーザーフレンドリーにフォーマット"
+      recommendations: ${diet_recommender.output}

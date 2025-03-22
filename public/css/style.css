@@ -1,0 +1,35 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.food-item {
+  border-bottom: 1px solid #e9ecef;
+  padding: 1rem;
+}
+
+.food-item:last-child {
+  border-bottom: none;
+}
+
+.restaurant-item {
+  border-bottom: 1px solid #e9ecef;
+  padding: 1rem;
+}
+
+.restaurant-item:last-child {
+  border-bottom: none;
+}
+
+.nutrition-info {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.health-options {
+  font-size: 0.85rem;
+  color: #198754;
+}
+
+.rating {
+  color: #ffc107;
+}
